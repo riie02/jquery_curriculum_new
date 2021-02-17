@@ -85,17 +85,17 @@
     <script src="../../common/js/jquery.js"></script>
     <script>
       $(function() {
-        $(".select").change(function() {
-          var val = $('select option:selected').val();
-          if(val === "all"){
-            $('ul.list li').each(function() {
-              $(this).show() });
+        $('.select').change(function() {
+          //var val2 = $('select option:selected').val();
+          var val = $(this).val();
+          if(val === 'all'){
+            $('.list li').show()
           } else {
-            $('ul.list li').each(function() {
-              if($(this).data("category-type") === val) {
-                $(this).show();
+            $('.list li').each(function(index, element) {
+              if($(element).data('category-type') === val) {
+                $(element).show();
               } else {
-                $(this).hide();
+                $(element).hide();
               }
             });
           }
